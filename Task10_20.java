@@ -29,12 +29,12 @@ public class Task10_20 {
     }
     public static int[] cumulativeSum(int[] a){ //task14
         for(int i = 1; i < a.length; i++){ //начинаем со второго числа
-            a[i] += a[i-1] ; //и проходимся по массиву складывая в массиве все последующие числа
+             a[i] += a[i-1] ; //и проходимся по массиву складывая в массиве все последующие числа
         }
         return a;
     }
     public static int getDecimalPlaces(String string){ //task15
-        String[] number = string.split("."); //  делим число по точке и выводим его длинну.
+        String[] number = string.split(","); //  делим число по точке и выводим его длинну.
         return number[1].length();
     }
     public static int Fibonacci(int n){ //task16

@@ -10,13 +10,13 @@ import java.awt.geom.Rectangle2D;
 import java.io.IOException;
 
 public class FractalExplorer extends JFrame {
-    private int size;
+    private final int size;
     private JImageDisplay imageDisplay;
     private FractalGenerator fractal;
     private Rectangle2D.Double range;
 
     public static void main(String[] args) {
-        FractalExplorer fractalExplorer = new FractalExplorer(400);
+        FractalExplorer fractalExplorer = new FractalExplorer(800);
         fractalExplorer.creatAndShowGUI();
         fractalExplorer.drawFractal();
     }
@@ -39,7 +39,7 @@ public class FractalExplorer extends JFrame {
         JButton resetButton = new JButton("Reset");
         JButton saveButton = new JButton("Save Image");
         JLabel label = new JLabel("Fractal:");
-        JComboBox comboBox = new JComboBox();
+        JComboBox<FractalGenerator> comboBox = new JComboBox<FractalGenerator>();
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
 
@@ -63,6 +63,7 @@ public class FractalExplorer extends JFrame {
         panel2.add(saveButton);
         panel2.add(resetButton);
 
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.add(imageDisplay,BorderLayout.CENTER);
         frame.add(panel1,BorderLayout.NORTH);
         frame.add(panel2,BorderLayout.SOUTH);
